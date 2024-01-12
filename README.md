@@ -12,7 +12,7 @@ Los objetivos específicos para conseguirlo son:
 -	eliminar del dataset cualquier referencia a ‘Winner’ y ‘Loser’, ya que implicaría dar directamente la respuesta al modelo. Para ello, otro objetivo es asignar aleatoriamente a cada jugador el número 1 o 2 y crear una variable ‘target’ con los valores 0 y 1, siendo 1 cuando el jugador 1 gane el partido y 0 cuando gane el jugador 2;
 -	entrenar un conjunto de modelos de clasificación para que puedan predecir qué jugador gana el partido; 
 -	evaluar el rendimiento de cada modelo, para posteriormente encontrar los parámetros del mejor modelo; y 
--	crear una interfaz con streamlit para poder introducir datos sobre los jugadores, torneo y superficie y conocer el resultado de la predicción.
+-	hacer predicciones con los modelos.
   
 ## Conjunto de datos
 El conjunto de datos elegido para el proyecto consiste en múltiples datasets que contienen información de los partidos de tenis de ATP, en categoría masculina e individuales, jugados entre los años 1991 y 2023.
@@ -36,9 +36,9 @@ También se han identificado atributos que, de introducirse en el modelo, provoc
 
 A partir de aquí, se han entrenado los modelos de clasificación con las dos versiones de datos y se han tuneado los hiperparámetros de los mejores modelos resultantes con GridSearchCV(). 
 
-Por último, se ha creado una interfaz con streamlit para poder introducir los datos y hacer las predicciones. Se puede ver el código en el archivo 'app.py'.
+Por último, se han hecho predicciones con los modelos.
 
 ## Conclusiones y sugerencias de mejora
-Se ha podido comprobar que el rendimiento de los modelos es considerablemente mejor si se incluye la información sobre el rendimiento de los jugadores durante el partido. Ello tiene sentido por cuanto estos atributos nos dan mucha información sobre el tipo y nivel de juego de cada jugador. Los mejores modelos para cada una de las versiones han sido: para la primera versión el XX con un score de XX, y el XX para la segunda versión, con un score de XX.
+Se ha podido comprobar que el rendimiento de los modelos es considerablemente mejor si se incluye la información sobre el rendimiento de los jugadores durante el partido. Ello tiene sentido por cuanto estos atributos nos dan mucha información sobre el tipo y nivel de juego de cada jugador. Los mejores modelos para cada una de las versiones han sido: para la primera versión el lr (Logistic Regression), y para la segunda versión el svc (Support Vector Classifier).
 
 Como sugerencia de mejora, se podrían incluir en el dataset datos sobre el rendimiento medio de los jugadores en los últimos partidos, así el modelo tendría más información para hacer las predicciones y serían datos que estarían disponibles en el momento de hacer la predicción, es decir, antes de que se jugara el partido. 
